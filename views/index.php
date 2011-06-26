@@ -32,10 +32,11 @@
     <div class="content">
 		<div class="codesample">
 			<span class="questionphp">&lt;?php</span><br />
-			<span class="identifier">ob_start</span>(<span class="keyword">function</span>($output) {<br />
-			&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">foreach</span>(<span class="identifier">explode</span>(<span class="string">"\n"</span>, <span class="identifier">$output</span>) <span class="keyword">as</span> <span class="identifier">$line</span>) {<br />
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">echo</span> <span class="identifier">trim</span>(<span class="identifier">$line</span>);<br />
+			<span class="identifier">ob_start</span>(<span class="keyword">function</span>($buff) {<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">foreach</span>(<span class="identifier">explode</span>(<span class="string">"\n"</span>, <span class="identifier">$buff</span>) <span class="keyword">as</span> <span class="identifier">$line</span>) {<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="identifier">$out</span> <span class="operator">.=</span> <span class="identifier">trim</span>(<span class="identifier">$line</span>);<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="identifier">$out</span>;
 			});
 		</div>
 		mini-framework also supports filters. These are executed during the processing of a request. Save the code snippet to the right in the <strong>lib/filters/</strong> directory as <strong>minify.php</strong> to minify the HTML outputted by your actions.
