@@ -32,9 +32,8 @@
     <div class="content">
 		<div class="codesample">
 			<span class="questionphp">&lt;?php</span><br />
-			<span class="identifier">ob_start</span>();<br />
-			<span class="identifier">register_shutdown_function</span>(<span class="keyword">function</span>() {<br />
-			&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">foreach</span>(<span class="identifier">explode</span>(<span class="string">"\n"</span>, <span class="identifier">ob_get_clean</span>()) <span class="keyword">as</span> <span class="identifier">$line</span>) {<br />
+			<span class="identifier">ob_start</span>(<span class="keyword">function</span>($output) {<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">foreach</span>(<span class="identifier">explode</span>(<span class="string">"\n"</span>, <span class="identifier">$output</span>) <span class="keyword">as</span> <span class="identifier">$line</span>) {<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">echo</span> <span class="identifier">trim</span>(<span class="identifier">$line</span>);<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;}<br />
 			});
