@@ -1,5 +1,5 @@
 <?php
-
+//testin 123 so so so
 $config = array(
 	/*
 	"db" => array(
